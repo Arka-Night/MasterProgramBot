@@ -11,7 +11,7 @@ Functions.manda = function(msg, user) {
   var msgmod;
 
   if (user !== 'MasterBotProgram') {
-    if (msg.length > 7 && msg.slice(8) !== "!Mmanda") {
+    if (msg.length > 7 && msg.slice(8, 15) !== "!Mmanda") {
       msgmod = msg.slice(8);
 
     }else if (msg.slice(8) === ""){
