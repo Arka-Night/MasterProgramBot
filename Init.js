@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const Functions = require('./Functions.js');
 const client = new Discord.Client();
+const TOKEN = process.env.TOKEN;
 
 console.log(Functions)
 
@@ -51,4 +52,4 @@ client.on('message', msg => {
 
 });
 
-client.login('NTA1MzY5ODU0MzgwMDgxMTgy.Xe0m6A.eNR9dfF3dLIOfDJcJjpD2Xp50pE');
+client.login(TOKEN);
