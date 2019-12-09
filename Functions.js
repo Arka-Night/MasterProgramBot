@@ -17,7 +17,7 @@ Functions.manda = function(msg, user) {
     }else if (msg.slice(8) === ""){
       msgmod = "Não me madaram mandar nada";
 
-    }else if (msg.length > 7 && msg.slice(8) === "!Mmanda") {
+    }else if (msg.length > 7 && msg.slice(8, 15) === "!Mmanda") {
       msgmod = "Achou que ia me enganar né? ACHOU ERRADO OTÁRIO";
 
     }
