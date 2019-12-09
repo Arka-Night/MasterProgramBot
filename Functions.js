@@ -62,7 +62,11 @@ Functions.kick = function(msg) {
 
           });
         });
+      }else {
+        mseg.reply("esse usuário não faz parte do servidor");
       }
+    }else {
+      mseg.reply("você deve marcar alguém para ser kickado");
     }
   }else {
     mseg.reply('Você não é um administrador');
