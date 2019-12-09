@@ -10,10 +10,11 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-  member.send('Olá, bem vindo aos nosso servidor! Nós somos totalmente focados a programação e por isso queremos o maximo de respeito e atenção!');
+  member.send('Olá, bem vindo aos nosso servidor!\n Nós somos totalmente focados a programação e por isso queremos o maximo de respeito e atenção!');
   member.send('Se caso não saiba como ter tal respeito confira nossas regras na referencia.');
   member.send('Se precisar de ajuda com comandos e etc digite !Mhelp nos chat de comandos');
   member.send('E é isso, esperamos que se divirta e aprenda muito, tão quanto tenha uma carreira de sucesso como programador!');
+  member.addRole('603664452386029568')
 
 });
 
