@@ -50,7 +50,7 @@ Functions.kick = function(msg) {
     if (user) {
       const member = mseg.guild.member(user);
 
-      if (member) {
+      if (member && !(member.permissions.has("ADMINISTRATOR"))) {
         member.createDM().then((DMChannel) => {
           DMChannel.send(`Você foi kickado por ${mseg.author}`).then(() => {
             member.kick().then(() => {
