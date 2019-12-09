@@ -87,7 +87,7 @@ Functions.ban = function(msg) {
 
               });
             });
-          }else {
+          }else if (parseInt(days) >= 11){msge.reply('o número de dias está fora do limite')}else {
             DMChannel.send(`Você foi banido por ${mseg.author}`).then(() => {
               member.ban().then(() => {
                 mseg.reply(`o usuário ${'@' + user.tag} foi banido`);
