@@ -80,7 +80,7 @@ Functions.ban = function(msg) {
     if (user) {
       const member = mseg.guild.member(user);
 
-      if (member) {
+      if (member && !(member.permissions.has("ADMINISTRATOR"))) {
         member.createDM().then((DMChannel) => {
             if (parseInt(days) < 11) {
               DMChannel.send(`Você foi banido por ${mseg.author} por ${days} dias`).then(() => {
