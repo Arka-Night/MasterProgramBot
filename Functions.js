@@ -104,7 +104,7 @@ Functions.ban = function(msg) {
               });
             }
           });
-        });
+        }
       }
     }
   }else {
