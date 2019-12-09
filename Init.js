@@ -26,6 +26,8 @@ client.on('message', msg => {
   author = msg.author;
   let responseObject = {
     '!Mligado': "Estou ligado!",
+    '!Mping': `o ping agora está de ${client.ping}`,
+    '!Mhm': "HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
 
   }
 
