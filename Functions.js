@@ -104,14 +104,12 @@ Functions.ban = function(msg) {
               });
             }
           });
+        }else {
+          mseg.reply('Você não é um administrador');
         }
       }
     }
-  }else {
-    mseg.reply('Você não é um administrador');
-
   }
-}
 
 
 
