@@ -34,8 +34,9 @@ Functions.help = function(author) {
   author.send('Os comandos são: !Mmanda "Oque você quer mandar sem as aspas", !Mligado e !Mhelp');
   author.send('"!Mmanda": eu mando o que você escrever na frente');
   author.send('"!Mligado": eu falo "ligado", é bom para testar se estou funcionando no momento');
-  author.send('"!Mhelp": eu mando os meus comandos e funcionalidades na sua DM');
   author.send('"!Mkick"(comando de uso de administrador): eu chuto a bunda de alguém');
+  author.send('"!Mban"(comando de uso de administrador): eu bano pessoas. (você pode colocar uma quantidade de dias de banimento)')
+  author.send('"!Mhelp": eu mando os meus comandos e funcionalidades na sua DM');
   return author + ', enviei no seu pv os meus comandos.';
 
 
