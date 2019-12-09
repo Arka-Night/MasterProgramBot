@@ -1,13 +1,6 @@
 var Functions = {};
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
 
-Functions.manda = function(msg, user) {
+Functions.send = function(msg, user) {
   var msgmod;
 
   if (user !== 'MasterBotProgram') {
@@ -23,7 +16,7 @@ Functions.manda = function(msg, user) {
     }
 
   }else {
-    msgmod = "Achou que ia me enganar né? ACHOU ERRADO OTÁRIO";
+    msgmod = "Achou que ia me enganar né? ACHOU ERRADO OTÁRIO";z
   }
 
   return msgmod;
@@ -63,6 +56,8 @@ Functions.kick = function(msg) {
 
           });
         });
+      }else {
+        mseg.reply(`o usuário ${'@' + user.tag} não pode ser kickado`);
       }
     }
   }else {
@@ -82,34 +77,36 @@ Functions.ban = function(msg) {
 
       if (member && !(member.permissions.has("ADMINISTRATOR"))) {
         member.createDM().then((DMChannel) => {
-            if (parseInt(days) < 11) {
-              DMChannel.send(`Você foi banido por ${mseg.author} por ${days} dias`).then(() => {
-                member.ban(parseInt(days)).then(() => {
-                  mseg.reply(`o usuário ${'@' + user.tag} foi banido por ${days} dias`);
+          if (parseInt(days) < 11) {
+            DMChannel.send(`Você foi banido por ${mseg.author} por ${days} dias`).then(() => {
+              member.ban(parseInt(days)).then(() => {
+                mseg.reply(`o usuário ${'@' + user.tag} foi banido por ${days} dias`);
 
-                }).catch(err => {
-                  mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+              }).catch(err => {
+                mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
 
-                });
               });
-            }else {
-              DMChannel.send(`Você foi banido por ${mseg.author}`).then(() => {
-                member.ban().then(() => {
-                  mseg.reply(`o usuário ${'@' + user.tag} foi banido`);
+            });
+          }else {
+            DMChannel.send(`Você foi banido por ${mseg.author}`).then(() => {
+              member.ban().then(() => {
+                mseg.reply(`o usuário ${'@' + user.tag} foi banido`);
 
-                }).catch(err => {
-                  mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+              }).catch(err => {
+                mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
 
-                });
               });
-            }
-          });
-        }else {
-          mseg.reply('Você não é um administrador');
-        }
+            });
+          }
+        });
+      }else {
+        mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
       }
     }
+  }else {
+      mseg.reply('Você não é um administrador');
   }
+}
 
 
 
