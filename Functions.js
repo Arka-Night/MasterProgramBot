@@ -57,7 +57,7 @@ Functions.kick = function(msg) {
           });
         });
       }else {
-        mseg.reply(`o usuário ${'@' + user.tag} não pode ser kickado`);
+        mseg.reply(`o usuário ${user} não pode ser kickado`);
       }
     }
   }else {
