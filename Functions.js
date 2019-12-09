@@ -47,10 +47,10 @@ Functions.kick = function(msg) {
         member.createDM().then((DMChannel) => {
           DMChannel.send(`Você foi kickado por ${mseg.author}`).then(() => {
             member.kick().then(() => {
-              mseg.reply(`o usuário ${'@' + user.tag} foi kickado`);
+              mseg.reply(`o usuário ${user} foi kickado`);
 
             }).catch(err => {
-              mseg.reply(`o usuário ${'@' + user.tag} não pode ser kickado`);
+              mseg.reply(`o usuário ${user} não pode ser kickado`);
 
             });
 
@@ -80,20 +80,20 @@ Functions.ban = function(msg) {
           if (parseInt(days) < 11) {
             DMChannel.send(`Você foi banido por ${mseg.author} por ${days} dias`).then(() => {
               member.ban(parseInt(days)).then(() => {
-                mseg.reply(`o usuário ${'@' + user.tag} foi banido por ${days} dias`);
+                mseg.reply(`o usuário ${user} foi banido por ${days} dias`);
 
               }).catch(err => {
-                mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+                mseg.reply(`o usuário ${user} não pode ser banido`);
 
               });
             });
           }else if (parseInt(days) >= 11){msge.reply('o número de dias está fora do limite')}else {
             DMChannel.send(`Você foi banido por ${mseg.author}`).then(() => {
               member.ban().then(() => {
-                mseg.reply(`o usuário ${'@' + user.tag} foi banido`);
+                mseg.reply(`o usuário ${user} foi banido`);
 
               }).catch(err => {
-                mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+                mseg.reply(`o usuário ${user} não pode ser banido`);
 
               });
             });
