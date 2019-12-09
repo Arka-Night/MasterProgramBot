@@ -62,11 +62,49 @@ Functions.kick = function(msg) {
 
           });
         });
-      }else {
-        mseg.reply("esse usuário não faz parte do servidor");
       }
-    }else {
-      mseg.reply("você deve marcar alguém para ser kickado");
+    }
+  }else {
+    mseg.reply('Você não é um administrador');
+
+  }
+}
+
+Functions.ban = function(msg) {
+  const mseg = msg;
+  const days = msg.content.slice(6, 8);
+  if (mseg.member.permissions.has("ADMINISTRATOR")) {
+    const user = mseg.mentions.users.first();
+
+    if (user) {
+      const member = mseg.guild.member(user);
+
+      if (member) {
+        member.createDM().then((DMChannel) => {
+            if (parseInt(days) < 11) {
+              DMChannel.send(`Você foi banido por ${mseg.author} por ${days} dias`).then(() => {
+                member.ban(parseInt(days)).then(() => {
+                  mseg.reply(`o usuário ${'@' + user.tag} foi banido por ${days} dias`);
+
+                }).catch(err => {
+                  mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+
+                });
+              });
+            }else {
+              DMChannel.send(`Você foi banido por ${mseg.author}`).then(() => {
+                member.ban().then(() => {
+                  mseg.reply(`o usuário ${'@' + user.tag} foi banido`);
+
+                }).catch(err => {
+                  mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+
+                });
+              });
+            }
+          });
+        });
+      }
     }
   }else {
     mseg.reply('Você não é um administrador');
