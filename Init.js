@@ -48,6 +48,9 @@ client.on('message', msg => {
       }else if (cmd.startsWith('!Mhelp')) {
         txc.send(Functions.help(author));
 
+      }else if (cmd.startsWith('!Mban')) {
+        Functions.ban(msg);
+        
       }else {
         txc.send(Functions.help(author));
 
