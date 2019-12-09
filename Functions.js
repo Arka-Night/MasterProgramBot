@@ -100,7 +100,7 @@ Functions.ban = function(msg) {
           }
         });
       }else {
-        mseg.reply(`o usuário ${'@' + user.tag} não pode ser banido`);
+        mseg.reply(`o usuário ${user} não pode ser banido`);
       }
     }
   }else {
