@@ -40,7 +40,7 @@ client.on('message', msg => {
         txc.send(responseObject[cmd])
 
       }else if (cmd.startsWith('!Mmanda')) {
-        txc.send(Functions.manda(cmd, user));
+        txc.send(Functions.send(cmd, user));
 
       }else if (cmd.startsWith('!Mkick')) {
         Functions.kick(msg);
