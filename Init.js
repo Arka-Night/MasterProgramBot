@@ -32,7 +32,7 @@ client.on('message', msg => {
   }
 
   if (user === "MasterBotProgram" && cmd.indexOf('Você não pode usar comandos aqui, use no chat "comandos-bot"') > -1) {
-    mseg.delete(5000);
+    msg.delete(5000);
 
   }else if (!(user === "MasterBotProgram") && (txc.name === 'comandos-bot' || msg.member.permissions.has("ADMINISTRATOR"))) {
     if (cmd.startsWith("!M")){
